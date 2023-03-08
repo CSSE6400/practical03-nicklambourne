@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Correct Project Structure",
+      "setup": "",
+      "run": "./.csse6400/bin/validate_structure.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Clean Git Repository",
+      "setup": "",
+      "run": "./.csse6400/bin/clean_repository.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Docker",
+      "setup": "",
+      "run": "./.csse6400/bin/docker.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Docker Compose",
+      "setup": "",
+      "run": "./.csse6400/bin/docker-compose.sh",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    }
+  ]
+}
