@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-docker ps -q | xargs docker kill
+docker ps -q | xargs -r docker kill
 
 docker-compose build
 docker-compose up -d
@@ -27,4 +27,4 @@ fi
 
 docker-compose down
 
-docker ps -q | xargs docker kill
+docker ps -q | xargs -r docker kill

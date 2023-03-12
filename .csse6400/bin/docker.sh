@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-docker ps -q | xargs docker kill
+docker ps -q | xargs -r docker kill
 
 # Build image
 docker build -t todo .
@@ -34,5 +34,5 @@ if [[ $error -ne 0 ]]; then
 fi
 
 # Kill docker conainer
-docker ps -q | xargs docker kill
+docker ps -q | xargs -r docker kill
 
