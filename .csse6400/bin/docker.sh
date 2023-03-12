@@ -2,6 +2,8 @@
 #
 # Check that the health endpoint is returning 200 using docker
 
+set -euo pipefail
+
 # Build image
 docker build -t todo .
 error=$?
@@ -13,7 +15,6 @@ fi
 # Run image
 docker_container=$(docker run --rm -d -p 6400:6400 todo)
 error=$?
-pid=$!
 if [[ $error -ne 0 ]]; then
     echo "Failed to run docker image"
     exit 1

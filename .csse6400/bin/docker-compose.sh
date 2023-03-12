@@ -1,10 +1,12 @@
 #!/bin/bash
 #
 # Check that the health endpoint is returning 200 using docker-compose
+
+set -euo pipefail
+
 docker-compose build
 docker-compose up -d
 error=$?
-pid=$!
 if [[ $error -ne 0 ]]; then
     echo "Failed to run docker-compose up"
     exit 1
