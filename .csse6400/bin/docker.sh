@@ -12,11 +12,6 @@ if [[ $error -ne 0 ]]; then
     exit 1
 fi
 
-existing_containers=$(docker ps -q)
-if [[ -n $existing_containers ]]; then
-    docker rm $(docker ps -q)
-fi
-
 # Run image
 docker_container=$(docker run --rm -d -p 6400:6400 todo)
 error=$?
@@ -37,5 +32,5 @@ if [[ $error -ne 0 ]]; then
 fi
 
 # Kill docker conainer
-docker stop ${docker_container}
+docker ps -q | xargs docker kill
 
