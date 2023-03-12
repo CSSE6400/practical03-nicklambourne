@@ -20,9 +20,12 @@ error=$?
 if [[ $error -ne 0 ]]; then
     echo "Failed to run docker image"
     exit 1
+  else
+    echo "Ran container ${docker_container}"
 fi
 
 # Wait for the container to start
+echo "Sleeping for 10s"
 sleep 10
 
 # Check that the health endpoint is returning 200
@@ -31,6 +34,8 @@ error=$?
 if [[ $error -ne 0 ]]; then
     echo "Failed to get 200 from health endpoint"
     exit 1
+  else
+    echo "Successfully checked health"
 fi
 
 # Kill docker conainer
