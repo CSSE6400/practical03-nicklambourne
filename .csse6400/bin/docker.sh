@@ -13,7 +13,7 @@ if [[ $error -ne 0 ]]; then
 fi
 
 existing_containers=$(docker ps -q)
-if [[ -z $existing_containers ]]; then
+if [[ -n $existing_containers ]]; then
     docker rm $(docker ps -q)
 fi
 
