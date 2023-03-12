@@ -4,6 +4,8 @@
 
 set -euo pipefail
 
+docker ps -q | xargs docker kill
+
 # Build image
 docker build -t todo .
 error=$?

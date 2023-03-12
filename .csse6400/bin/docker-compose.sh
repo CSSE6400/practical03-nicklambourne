@@ -4,6 +4,8 @@
 
 set -euo pipefail
 
+docker ps -q | xargs docker kill
+
 docker-compose build
 docker-compose up -d
 error=$?
@@ -25,3 +27,4 @@ fi
 
 docker-compose down
 
+docker ps -q | xargs docker kill
